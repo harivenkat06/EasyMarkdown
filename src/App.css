@@ -1,0 +1,189 @@
+/* Root theme variables */
+:root {
+  --bg: #f6f8fa;
+  --text: #24292f;
+  --header-bg: #ffffff;
+  --panel-bg: #ffffff;
+  --panel-header: #f3f4f6;
+  --editor-bg: #ffffff;
+  --border: #d0d7de;
+  --btn-bg: #0969da;
+  --btn-text: #ffffff;
+  --btn-hover: #035fc7;
+  --shortcut-bg: #e1e4e8;
+  --shortcut-text: #24292f;
+}
+
+/* Dark mode variables */
+body.dark {
+  --bg: #0d1117;
+  --text: #c9d1d9;
+  --header-bg: #161b22;
+  --panel-bg: #161b22;
+  --panel-header: #21262d;
+  --editor-bg: #0d1117;
+  --border: #30363d;
+  --btn-bg: #238636;
+  --btn-text: #ffffff;
+  --btn-hover: #2ea043;
+  --shortcut-bg: #30363d;
+  --shortcut-text: #c9d1d9;
+}
+
+/* Body */
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* App container */
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Header */
+.header {
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: var(--header-bg);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Header title */
+.header h1 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* Shortcuts container */
+.shortcuts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: 800px;
+}
+
+.shortcut {
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: var(--shortcut-bg);
+  color: var(--shortcut-text);
+  font-size: 12px;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.shortcut:hover {
+  opacity: 0.8;
+}
+
+/* Buttons on the right */
+.header-right {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Buttons */
+.header button {
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.header button:hover {
+  background-color: var(--btn-hover);
+}
+
+/* Panels container */
+.container {
+  flex: 1;
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Panel styling */
+.panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--panel-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Panel header */
+.panel-title {
+  padding: 12px 18px;
+  font-weight: 600;
+  background-color: var(--panel-header);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Editor */
+.editor {
+  flex: 1;
+  padding: 20px;
+  border: none;
+  outline: none;
+  resize: none;
+  font-size: 16px;
+  background-color: var(--editor-bg);
+  color: var(--text);
+  font-family: inherit;
+  overflow-y: auto;
+}
+
+/* Preview */
+.preview-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: var(--panel-bg);
+  color: var(--text);
+}
+
+/* Code blocks and inline code for preview */
+.preview-content pre {
+  background-color: #f6f8fa; /* Light mode code block */
+  color: #24292f;
+  padding: 12px;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-family: 'Fira Code', monospace;
+  font-size: 14px;
+}
+
+.preview-content code {
+  background-color: #e1e4e8;
+  color: #24292f;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-family: 'Fira Code', monospace;
+}
+
+/* Dark mode code styling */
+body.dark .preview-content pre {
+  background-color: #0d1117;
+  color: #c9d1d9;
+}
+
+body.dark .preview-content code {
+  background-color: #30363d;
+  color: #c9d1d9;
+}
